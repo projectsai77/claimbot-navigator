@@ -78,55 +78,57 @@ export default function NewClaim() {
   }
 
   return (
-    <div className="container mx-auto max-w-2xl py-8">
-      <h1 className="text-2xl font-bold mb-6">Submit New Claim</h1>
-      
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-        <div>
-          <label htmlFor="title" className="block text-sm font-medium mb-2">
-            Title
-          </label>
-          <Input
-            id="title"
-            {...register("title", { required: "Title is required" })}
-            className={errors.title ? "border-red-500" : ""}
-          />
-          {errors.title && (
-            <p className="text-red-500 text-sm mt-1">{errors.title.message}</p>
-          )}
-        </div>
+    <div className="container mx-auto py-8 relative">
+      <div className="max-w-2xl mx-auto pr-[400px]">
+        <h1 className="text-2xl font-bold mb-6">Submit New Claim</h1>
+        
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <div>
+            <label htmlFor="title" className="block text-sm font-medium mb-2">
+              Title
+            </label>
+            <Input
+              id="title"
+              {...register("title", { required: "Title is required" })}
+              className={errors.title ? "border-red-500" : ""}
+            />
+            {errors.title && (
+              <p className="text-red-500 text-sm mt-1">{errors.title.message}</p>
+            )}
+          </div>
 
-        <div>
-          <label htmlFor="description" className="block text-sm font-medium mb-2">
-            Description
-          </label>
-          <Textarea
-            id="description"
-            {...register("description", { required: "Description is required" })}
-            className={errors.description ? "border-red-500" : ""}
-            rows={4}
-          />
-          {errors.description && (
-            <p className="text-red-500 text-sm mt-1">{errors.description.message}</p>
-          )}
-        </div>
+          <div>
+            <label htmlFor="description" className="block text-sm font-medium mb-2">
+              Description
+            </label>
+            <Textarea
+              id="description"
+              {...register("description", { required: "Description is required" })}
+              className={errors.description ? "border-red-500" : ""}
+              rows={4}
+            />
+            {errors.description && (
+              <p className="text-red-500 text-sm mt-1">{errors.description.message}</p>
+            )}
+          </div>
 
-        <div>
-          <label htmlFor="document_url" className="block text-sm font-medium mb-2">
-            Supporting Document URL (optional)
-          </label>
-          <Input
-            id="document_url"
-            {...register("document_url")}
-            type="url"
-            placeholder="https://"
-          />
-        </div>
+          <div>
+            <label htmlFor="document_url" className="block text-sm font-medium mb-2">
+              Supporting Document URL (optional)
+            </label>
+            <Input
+              id="document_url"
+              {...register("document_url")}
+              type="url"
+              placeholder="https://"
+            />
+          </div>
 
-        <Button type="submit" disabled={isProcessing}>
-          {isProcessing ? "Processing..." : "Submit Claim"}
-        </Button>
-      </form>
+          <Button type="submit" disabled={isProcessing}>
+            {isProcessing ? "Processing..." : "Submit Claim"}
+          </Button>
+        </form>
+      </div>
 
       <ClaimAssistant />
     </div>

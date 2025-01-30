@@ -47,7 +47,7 @@ export default function ClaimAssistant() {
   }
 
   return (
-    <Card className="fixed bottom-4 right-4 w-96 p-4 shadow-lg">
+    <Card className="fixed top-8 right-8 w-[350px] p-4 shadow-lg">
       <div className="space-y-4">
         <div className="h-[300px] overflow-y-auto space-y-4 mb-4">
           {messages.map((message, index) => (

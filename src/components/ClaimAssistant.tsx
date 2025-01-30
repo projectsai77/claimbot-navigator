@@ -47,9 +47,15 @@ export default function ClaimAssistant() {
   }
 
   return (
-    <Card className="fixed top-8 right-8 w-[350px] p-4 shadow-lg">
+    <Card className="fixed right-8 top-24 w-[350px] p-4 shadow-lg bg-white z-50">
       <div className="space-y-4">
-        <div className="h-[300px] overflow-y-auto space-y-4 mb-4">
+        <h3 className="font-semibold text-lg">Claims Assistant</h3>
+        <div className="h-[400px] overflow-y-auto space-y-4 mb-4">
+          {messages.length === 0 && (
+            <p className="text-muted-foreground text-sm">
+              Ask me anything about filing claims!
+            </p>
+          )}
           {messages.map((message, index) => (
             <div
               key={index}

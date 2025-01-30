@@ -78,8 +78,8 @@ export default function NewClaim() {
   }
 
   return (
-    <div className="container mx-auto py-8 relative">
-      <div className="max-w-2xl mx-auto pr-[400px]">
+    <div className="container mx-auto py-8">
+      <div className="max-w-2xl mx-auto">
         <h1 className="text-2xl font-bold mb-6">Submit New Claim</h1>
         
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
